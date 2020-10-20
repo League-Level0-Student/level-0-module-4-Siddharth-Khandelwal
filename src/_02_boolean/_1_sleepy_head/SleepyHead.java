@@ -1,5 +1,7 @@
 package _02_boolean._1_sleepy_head;
 
+import java.awt.Color;
+
 import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
@@ -15,33 +17,25 @@ public class SleepyHead {
          String Day = JOptionPane.showInputDialog("What day of the week is it?");
 		// Set the boolean isWeekend based on the value they enter
 		if (Day .equalsIgnoreCase  ("Saturday")) {
-			JOptionPane.showMessageDialog(null, "You can sleep in!!!!");
+			isWeekend = true;
 		}
 		else if(Day .equalsIgnoreCase("Sunday")) {
-			JOptionPane.showMessageDialog(null, "You can sleep in!!!!");
+			isWeekend = true;
 		}
-		else if(Day .equalsIgnoreCase("Monday")) {
-			JOptionPane.showMessageDialog(null, "Get to school.............QUICK!!!!!");
+		
+					
+		else {
+			 isWeekend = false;
 		}
-		else if(Day .equalsIgnoreCase("Tuesday")) {
-			JOptionPane.showMessageDialog(null, "Get to school.............QUICK!!!!!");
-		}
-		else if(Day .equalsIgnoreCase("Wednesday")) {
-			JOptionPane.showMessageDialog(null, "Get to school.............QUICK!!!!!");
-		}
-		else if(Day .equalsIgnoreCase("Thursday")) {
-			JOptionPane.showMessageDialog(null, "Get to school.............QUICK!!!!!");
-		}
-		else if(Day .equalsIgnoreCase("Friday")) {
-			JOptionPane.showMessageDialog(null, "Get to school.............QUICK!!!!!");
+		
+		// If it is the weekend, tell the user they get to sleep in.
+		if (isWeekend) {
+		JOptionPane.showMessageDialog(null, "You can sleep in!!!!");
 		}
 		else {
-			JOptionPane.showMessageDialog(null, "Please state a day of the week "+Day+" is not a day");
-		}
-		// If it is the weekend, tell the user they get to sleep in.
-		
 		// If it is not the weekend, tell them to get out of bed and go to school!
-		
+		JOptionPane.showMessageDialog(null, "Get to school.............QUICK!!!!!");
+		}
 		
 		/************************   STAR STUDENT  **************************/
 
@@ -59,9 +53,7 @@ String score = JOptionPane.showInputDialog("What percentage did you score on you
 		else if(Score <= 69) {
 			JOptionPane.showMessageDialog(null, "Nice try "+Score+"% is still pretty good.");
 		}
-		else {
-			JOptionPane.showMessageDialog(null, "Sorry "+Score+" is not a score");
-		}
+		
 		// otherwise, wish them better luck next time.
 		
 		
@@ -81,29 +73,68 @@ if (gameOver .equals ("yes")) {
 }
 		}
 		// Tell the user "game is over" 
-		
+		JOptionPane.showMessageDialog(null, "game is over");
 		
 		/***********************   RED SQUARE  ********************/
 		
 		boolean isRed;
 		// Ask the user what color to draw with. Based on their answer, set the isRed variable
-		
+		String Color = JOptionPane.showInputDialog("What color do you want to draw with?");		
+		if (Color.equalsIgnoreCase("Red")){
+				isRed = true;
+		}
+		else {
+			isRed = false;
+		}
 		
 		boolean isSquare;		
 		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
-		
-		
+		String Shape = JOptionPane.showInputDialog("What shape do you want to draw?");
+		if (Shape.equalsIgnoreCase("Square")) {
+			isSquare = true;
+		}
+		else {
+			isSquare = false;
+		}
 		// Now you MUST use the && operator to join the booleans for this code. 
 		// Ask your teacher if you are not sure how
 		// Use an if statement to ONLY draw a red square when it has been requested (use the method below)
 		// otherwise, tell the user you don't know how to draw that shape
-		
-
+	if(isRed && isSquare) {
+		drawRedSquare();
 	}
-
+	else {
+		JOptionPane.showMessageDialog(null, "Sorry I don't know how to draw that shape");
+	}
+	
+	}
 	
 	static void drawRedSquare() {
-		Robot rob = new Robot();
+		Robot nugget = new Robot();
 		// Complete the rest of this method
+	nugget.hide();
+	nugget.setPenColor(Color.red);
+	nugget.penDown();
+	nugget.setSpeed(10000);
+	for (int i = 0; i < 4; i++) {
+	nugget.move(100);
+	nugget.turn(90);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	}	
 }
+
+
+
+
+
+
+
+
