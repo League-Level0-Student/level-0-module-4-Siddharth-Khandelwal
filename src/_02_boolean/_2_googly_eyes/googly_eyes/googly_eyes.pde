@@ -13,7 +13,7 @@ void draw() {
   
 fill(255);
  ellipse(407,151,140,150);
-
+ellipse(307,130,120,150);
 if(mouseX < 360){
   mouseX = 360; 
 }
@@ -29,5 +29,5 @@ if(mouseY > 201){
 
 fill(0);
 ellipse(mouseX,mouseY,50,50);
-
+ellipse(mouseX-100,mouseY,50,50);
 }
